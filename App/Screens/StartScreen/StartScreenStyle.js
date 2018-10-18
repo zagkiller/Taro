@@ -5,9 +5,10 @@ import Colors from "../../Themes/Colors";
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   StartCont: {
-        justifyContent: 'space-around',
-        alignItems: "center",
+        justifyContent: 'center',
+        flexDirection: 'column',
         backgroundColor: Colors.kfc,
-        padding: 200,
+        padding: 20,
+        width: '100%'
     }
 })

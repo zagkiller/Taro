@@ -5,9 +5,7 @@ import RootContainer from './RootContainer'
 export default class App extends React.Component {
   render() {
     return (
-      <View>
         <RootContainer />
-      </View>
     );
   }
 }

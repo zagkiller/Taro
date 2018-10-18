@@ -5,22 +5,22 @@ import { View, Text, Button, Image } from 'react-native'
 // import LoginActions from '../../Redux/LoginRedux'
 import { NavigationActions } from 'react-navigation';
 
-import styles from './ChoseCardsScreenStyle'
+import styles from './ChooseCardsScreenStyle'
 
 
-class ChoseCardsScreen extends Component {
+class ChooseCardsScreen extends Component {
 
   constructor (props) {
     super(props)
   }
 
   _toStart = () => {
-    this.props.navigation.navigate('StartScreen');
+    //this.props.navigation.navigate('StartScreen');
   }
 
   render () {
     console.log('there');
-    this.props.navigation.navigate('StartScreen');
+    //this.props.navigation.navigate('StartScreen');
     return (
       <View style={styles.StartCont}>
             <Image
@@ -34,4 +34,4 @@ class ChoseCardsScreen extends Component {
 }
 
 
-export default ChoseCardsScreen
+export default ChooseCardsScreen

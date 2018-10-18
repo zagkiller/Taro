@@ -1,21 +1,18 @@
 import { createStackNavigator, createSwitchNavigator } from 'react-navigation'
 
 import StartScreen from '../Screens/StartScreen'
-import ChoseCardsScreen from '../Screens/ChoseCardsScreen'
+import ChooseCardsScreen from '../Screens/ChooseCardsScreen'
 
 import styles from './Styles/NavigationStyles'
-const ChoseStack = createStackNavigator({Chose:ChoseCardsScreen})
+const ChooseStack = createStackNavigator({ChooseCards:ChooseCardsScreen})
 
 const PrimaryNav = createSwitchNavigator(
   {
     StartScreen: StartScreen,
-//    ChoseCardsScreen: ChoseStack
+    ChooseCardsScreen: ChooseStack
   },
   {
-    initialRouteName: 'StartScreen',
-    navigationOptions: {
-      headerStyle: styles.header
-    }
+    initialRouteName: 'StartScreen'
   }
 )
 export default PrimaryNav

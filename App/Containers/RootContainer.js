@@ -13,7 +13,7 @@ class RootContainer extends Component {
 
   render () {
     return (
-      <View>
+      <View style={styles.mainConteiner}>
         <AppNavigation
           ref={(navigatorRef) => {NavigationService.setTopLevelNavigator(navigatorRef);}}
           persistenceKey={"navigation"}
