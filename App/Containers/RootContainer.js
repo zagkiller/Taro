@@ -14,7 +14,6 @@ class RootContainer extends Component {
   render () {
     return (
       <View>
-        <StatusBar barStyle='light-content' />
         <AppNavigation
           ref={(navigatorRef) => {NavigationService.setTopLevelNavigator(navigatorRef);}}
           persistenceKey={"navigation"}

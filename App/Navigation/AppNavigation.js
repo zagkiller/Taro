@@ -9,7 +9,7 @@ const ChoseStack = createStackNavigator({Chose:ChoseCardsScreen})
 const PrimaryNav = createSwitchNavigator(
   {
     StartScreen: StartScreen,
-    ChoseCardsScreen: ChoseStack
+//    ChoseCardsScreen: ChoseStack
   },
   {
     initialRouteName: 'StartScreen',

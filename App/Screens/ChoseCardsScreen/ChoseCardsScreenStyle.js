@@ -3,10 +3,9 @@ import { ApplicationStyles } from '../../Themes'
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
-  StartCont: {
-        justifyContent: 'space-around',
-        alignItems: "center",
-        flexDirection: 'row'
-
+    StartCont: {
+        flex:1,
+        justifyContent: 'center',
+        alignItems: "center"
     }
 })
