@@ -1,12 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text, Button, Image } from 'react-native'
-// import { connect } from 'react-redux'
 
-// import LoginActions from '../../Redux/LoginRedux'
-import { NavigationActions } from 'react-navigation';
-
-import styles from './ChooseCardsScreenStyle'
-
+import styles from './ChooseCardsScreenStyle';
+import CardList from '../../Shared/CardList';
 
 class ChooseCardsScreen extends Component {
 
@@ -15,19 +11,20 @@ class ChooseCardsScreen extends Component {
   }
 
   _toStart = () => {
-    //this.props.navigation.navigate('StartScreen');
+    this.props.navigation.navigate('StartScreen');
   }
 
-  render () {
-    console.log('there');
-    //this.props.navigation.navigate('StartScreen');
+  _pressCard = () => {
+    console.log('1111');
+  }
+
+   render () {
+    const bgImage = require('../../Data/images/bs.jpg');
     return (
       <View style={styles.StartCont}>
-            <Image
-              style={{width: 150, height: 150}}
-              source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
-            />
-            <Button title="Start!" onPress={this._toStart} />
+          <Text>Выбери 5 карт</Text>    
+          <CardList count={22} onPress={this._pressCard} bgImage={bgImage} styleCard={styles.styleCard}/>
+          <Button title="Start!" onPress={this._toStart} />            
       </View>
     )
   }

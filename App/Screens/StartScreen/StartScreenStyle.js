@@ -7,8 +7,9 @@ export default StyleSheet.create({
   StartCont: {
         justifyContent: 'center',
         flexDirection: 'column',
-        backgroundColor: Colors.kfc,
-        padding: 20,
-        width: '100%'
+        backgroundColor: Colors.cloud,
+        padding: 10,
+        width: '100%',
+        height:'100%'
     }
 })

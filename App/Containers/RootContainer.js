@@ -3,7 +3,7 @@ import { View, StatusBar,Text } from 'react-native'
 // import { connect } from 'react-redux'
 // import StartupActions from '../Redux/StartupRedux'
 // import ReduxPersist from '../Config/ReduxPersist'
-import NavigationService from '../Navigation/NavigationService';
+//import NavigationService from '../Navigation/NavigationService';
 
 // Styles
 import styles from './Styles/RootContainerStyles'
@@ -14,10 +14,7 @@ class RootContainer extends Component {
   render () {
     return (
       <View style={styles.mainConteiner}>
-        <AppNavigation
-          ref={(navigatorRef) => {NavigationService.setTopLevelNavigator(navigatorRef);}}
-          persistenceKey={"navigation"}
-        />
+          <AppNavigation persistenceKey={"navigation"} />
       </View>
     )
   }

@@ -1,27 +1,18 @@
 import React, { PureComponent } from 'react'
-import { Image, View } from 'react-native'
-import styles from './CardStyle'
+import { Image, View, TouchableHighlight } from 'react-native'
 
-class StartScreen extends PureComponent {
-
-  constructor (props) {
-    super(props)
-
-  }
-
-  _onPress = () => {
-    this.props.navigation.navigate('ChooseCards');
-  }
+class Card extends PureComponent {
 
   render () {
-    console.log('Here');
+    const {onPress, bgImage, styleCard} = this.props;
+
     return (
-      <View style={styles.StartCont}>
-          <Button title="Start!" onPress={this._toStart} />
-      </View>
+      <TouchableHighlight onPress={onPress} >
+          <Image source={bgImage} style={styleCard} />
+      </TouchableHighlight>
     )
   }
 }
 
 
-export default StartScreen
+export default Card;
