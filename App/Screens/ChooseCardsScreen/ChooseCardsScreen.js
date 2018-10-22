@@ -14,8 +14,8 @@ class ChooseCardsScreen extends Component {
     this.props.navigation.navigate('StartScreen');
   }
 
-  _pressCard = () => {
-    console.log('1111');
+  _pressCard (x){
+    console.log('1111',x);
   }
 
    render () {

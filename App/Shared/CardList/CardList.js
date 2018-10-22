@@ -9,7 +9,7 @@ class CardList extends PureComponent {
   _getCards(count, bgImage, onPress, styleCard){
     var output=[];
     for (i = 0; i < count; i++) {
-          output[i] = (<Card key={i} bgImage={bgImage} onPress={onPress} styleCard={styleCard}/>);
+          output[i] = (<Card keyX={i} key={i} bgImage={bgImage} onPress={onPress}  styleCard={styleCard}/>);
     }
     return(
       <View style={CardListStyle.allCards} >{output}</View>            
@@ -18,8 +18,6 @@ class CardList extends PureComponent {
   }
   
   render () {
-    var {height, width} = Dimensions.get('window');
-console.log('wh',height,width);
     const {count, bgImage, onPress, styleCard} = this.props;
     return this._getCards(count, bgImage, onPress, styleCard);
 
