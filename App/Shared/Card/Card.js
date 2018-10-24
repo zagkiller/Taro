@@ -5,7 +5,6 @@ class Card extends PureComponent {
 
   render () {
     const {keyX, onPress, bgImage, styleCard} = this.props;
-console.log(keyX);
     return (
       <TouchableHighlight key={keyX} onPress={() => { onPress(keyX) } } >
           <Image source={bgImage} style={styleCard} />

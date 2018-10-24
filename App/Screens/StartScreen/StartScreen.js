@@ -11,7 +11,7 @@ class StartScreen extends Component {
   }
 
   _toStart = () => {
-    this.props.navigation.navigate('ChooseCards');
+    this.props.navigation.navigate('ChooseCards', { count: 22 });
   }
   render () {
     console.log('Here');

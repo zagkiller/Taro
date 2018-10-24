@@ -9,5 +9,6 @@ export default StyleSheet.create({
         flexWrap: 'wrap',
         alignContent: 'flex-start',
         alignItems: 'flex-start',
+        padding: 12,
     }
 })

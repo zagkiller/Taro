@@ -16,6 +16,8 @@ export default StyleSheet.create({
     styleCard: {
         height: height/5,
         width: width/7+5,  
-        paddingRight: 5,
+        padding: 15,
+        backgroundColor: Colors.panther,
+
     }
 })
