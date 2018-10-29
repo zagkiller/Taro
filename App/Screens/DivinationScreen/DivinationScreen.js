@@ -1,12 +1,20 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Text, Button, Image } from 'react-native'
+/*
+import { connect } from 'react-redux';
+import { getCards } from "../../Redux/CardsRedux";
+*/
 
 import NavigationService from "../../Navigation/NavigationService";
 
 import styles from './DivinationScreenStyle';
 import Card from '../../Shared/Card';
 
-class ChooseCardsScreen extends Component {
+function _generateCards(){
+  console.log("FUN");
+}
+
+class DivinationScreen extends Component {
 
   constructor (props) {
     super(props);
@@ -17,7 +25,8 @@ class ChooseCardsScreen extends Component {
   }
  
   componentDidMount(){
-      console.log("componentDidMount()");
+    //this.props.generateCards();  
+    //console.log("componentDidMount()");
   }
 
   _pressCard = (x) => {
@@ -47,5 +56,17 @@ class ChooseCardsScreen extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  cards: getCards(state),
+});
 
-export default ChooseCardsScreen
+const mapDispatchToProps = dispatch => {
+  return {
+    generateCards: () => {
+      dispatch(_generateCards)
+    }
+  }
+}
+
+//export default connect(mapStateToProps, mapDispatchToProps)(DivinationScreen);
+export default DivinationScreen;
