@@ -14,7 +14,6 @@ class StartScreen extends Component {
     this.props.navigation.navigate('ChooseCards', { count: 22 });
   }
   render () {
-    console.log('Here');
     return (
       <View style={styles.StartCont}>
           <Button title="Start!" onPress={this._toStart} />

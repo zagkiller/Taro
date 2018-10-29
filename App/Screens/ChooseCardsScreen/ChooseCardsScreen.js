@@ -23,9 +23,13 @@ class ChooseCardsScreen extends Component {
     return count;
   }
   _pressCard = (x) => {
-    console.log('sdsd',  this._getCountCard());
-//    let countNext = this._getCountCard() - 1;
-      this.props.navigation.navigate('ChooseCards', { count: this._getCountCard() - 1 });
+    let curCountCard = this._getCountCard();
+    if (curCountCard >= 19) {
+      this.props.navigation.navigate('ChooseCards', { count: curCountCard - 1 });
+    } else {
+      this.props.navigation.navigate('DivinationScreen');
+    }
+    
   }
 
    render () {
