@@ -19,8 +19,16 @@ export default StyleSheet.create({
         height: height/5.5,
         width: width/6,  
         padding: 15,
-        borderRadius: 15,
+        borderRadius: 5,
         backgroundColor: Colors.panther,
+    }, 
+    styleCardRotate: {
+        height: height/5.5,
+        width: width/6,  
+        padding: 15,
+        borderRadius: 5,
+        backgroundColor: Colors.panther,
+        transform: [{ rotate: '180deg'}],
     }, 
     cardTop: {
         flex:3,
