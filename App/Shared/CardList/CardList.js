@@ -9,7 +9,7 @@ class CardList extends PureComponent {
   _getCards(count, bgImage, onPress, styleCard){
     var output=[];
     for (i = 0; i < count; i++) {
-          output[i] = (<Card keyX={i} key={i} bgImage={bgImage} onPress={onPress}  styleCard={styleCard}/>);
+          output[i] = (<Card idCard={i} key={i} bgImage={bgImage} onPress={onPress}  styleCard={styleCard}/>);
     }
     return(
       <View style={CardListStyle.allCards} >{output}</View>            

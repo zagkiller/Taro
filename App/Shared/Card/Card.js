@@ -4,9 +4,10 @@ import { Image, View, TouchableHighlight } from 'react-native'
 class Card extends PureComponent {
 
   render () {
-    const {keyX, onPress, bgImage, styleCard} = this.props;
+    const {idCard, onPress, bgImage, styleCard} = this.props;
+    console.log(idCard);
     return (
-      <TouchableHighlight key={keyX} onPress={() => { onPress(keyX) } } >
+      <TouchableHighlight key={idCard} onPress={() => { onPress(idCard) } } >
           <Image source={bgImage} style={styleCard} />
       </TouchableHighlight>
     )

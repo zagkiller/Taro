@@ -10,14 +10,21 @@ import NavigationService from "../../Navigation/NavigationService";
 import styles from './DivinationScreenStyle';
 import Card from '../../Shared/Card';
 
+let cardsId = [];
 function _generateCards(){
-  console.log("FUN");
+  cardsId = [1,2,3,4,5];
+  return cardsId;
 }
 
 class DivinationScreen extends Component {
 
   constructor (props) {
     super(props);
+    this.state = {
+      cardsId: [],
+      cardsItems: require('./cards.json'),
+
+    }
   }
 
   _toStart = () => {
@@ -25,12 +32,14 @@ class DivinationScreen extends Component {
   }
  
   componentDidMount(){
-    //this.props.generateCards();  
-    //console.log("componentDidMount()");
+    _generateCards();
+    this.setState({
+      cardsId: [1,2,3,4,5]
+    })
   }
 
   _pressCard = (x) => {
-   
+      console.log(x);
   }
 
    render () {
@@ -38,15 +47,15 @@ class DivinationScreen extends Component {
     return (
       <View style={styles.StartCont}>
           <View style={styles.cardTop}>
-              <Card keyX={1} key={1} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>
+              <Card idCard={cardsId[0]} key={1} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>
           </View>    
           <View style={styles.cardCenter}>
-              <Card keyX={2} key={2} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
-              <Card keyX={3} key={3} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
-              <Card keyX={4} key={4} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
+              <Card idCard={cardsId[1]} key={2} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
+              <Card idCard={cardsId[2]} key={3} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
+              <Card idCard={cardsId[3]} key={4} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
           </View>    
           <View style={styles.cardTop}>
-              <Card keyX={5} key={5} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>
+              <Card idCard={cardsId[4]} key={5} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>
           </View>    
           <View style={styles.cardBottom}>
               <Button title="Start!" onPress={this._toStart} />            
