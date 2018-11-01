@@ -30,6 +30,7 @@ function _generateCards(){
 
 function _generateCardsTurn(){
   let masCard = [];
+  let i = 0;
   while( i < 5 ){
     if (Math.round( Math.random()))
       masCard.push(true);
@@ -37,6 +38,7 @@ function _generateCardsTurn(){
       masCard.push(false);
       i++;
   }
+
   return masCard;
 }
 
@@ -55,14 +57,16 @@ class DivinationScreen extends Component {
   _toStart = () => {
     this.props.navigation.navigate('StartScreen');
   }
- 
-  // componentDidMount(){
-  //   _generateCards();
-  //   this.setState({
-  //     cardsId: [1,2,3,4,5]
-  //   })
-  // }
 
+  __toInterpritation = () => {
+    let masCards = {
+      idCard: this.state.cardsId,
+      cardTurn: this.state.cardsTurn,
+      cardsItems: this.state.cardsItems
+    }
+    this.props.navigation.navigate('InterpritationScreen', masCards);
+  }
+ 
   _pressCard = (x) => {
       console.log(x);
   }
@@ -72,35 +76,43 @@ class DivinationScreen extends Component {
     return (
       <View style={styles.StartCont}>
           <View style={styles.cardTop}>
-              <Card idCard={this.state.cardsId[0]} key={1}  openImage={this.state.cardsItems[this.state.cardsId[0]-1]} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>
+              <Card idCard={0} key={1} openImage={this.state.cardsItems[this.state.cardsId[0]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              styleCard={[styles.styleCard, this.state.cardsTurn[0] && styles.styleCardRotate]}/>
           </View>    
           <View style={styles.cardCenter}>
-              <Card idCard={this.state.cardsId[1]} key={2} openImage={this.state.cardsItems[this.state.cardsId[1]-1]} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
-              <Card idCard={this.state.cardsId[2]} key={3} openImage={this.state.cardsItems[this.state.cardsId[2]-1]} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
-              <Card idCard={this.state.cardsId[3]} key={4} openImage={this.state.cardsItems[this.state.cardsId[3]-1]} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCard}/>   
+              <Card idCard={1} key={2} openImage={this.state.cardsItems[this.state.cardsId[1]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              styleCard={[styles.styleCard, this.state.cardsTurn[1] && styles.styleCardRotate]}/>
+              <Card idCard={2} key={3} openImage={this.state.cardsItems[this.state.cardsId[2]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              styleCard={[styles.styleCard, this.state.cardsTurn[2] && styles.styleCardRotate]}/>
+              <Card idCard={3} key={4} openImage={this.state.cardsItems[this.state.cardsId[3]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              styleCard={[styles.styleCard, this.state.cardsTurn[3] && styles.styleCardRotate]}/>
           </View>    
           <View style={styles.cardTop}>
-              <Card idCard={this.state.cardsId[4]} key={5} openImage={this.state.cardsItems[this.state.cardsId[4]-1]} bgImage={bgImage} onPress={this._pressCard}  styleCard={styles.styleCardRotate}/>
+              <Card idCard={4} key={5} openImage={this.state.cardsItems[this.state.cardsId[4]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              styleCard={[styles.styleCard, this.state.cardsTurn[4] && styles.styleCardRotate]}/>
           </View>    
           <View style={styles.cardBottom}>
               <Button title="Start!" onPress={this._toStart} />            
+              <Button title="Интерпритировать" onPress={this.__toInterpritation} />            
           </View>    
       </View>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  cards: getCards(state),
-});
+//this.state.cardsId[2]
 
-const mapDispatchToProps = dispatch => {
-  return {
-    generateCards: () => {
-      dispatch(_generateCards)
-    }
-  }
-}
+// const mapStateToProps = state => ({
+//   cards: getCards(state),
+// });
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     generateCards: () => {
+//       dispatch(_generateCards)
+//     }
+//   }
+// }
 
 //export default connect(mapStateToProps, mapDispatchToProps)(DivinationScreen);
 export default DivinationScreen;

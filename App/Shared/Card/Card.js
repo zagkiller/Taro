@@ -11,17 +11,18 @@ class Card extends PureComponent {
     }
   }
 
-  turnImage(){
-    this.setState({
-      showImage : this.props.openImage.image
-
-    }) 
+  _turnImage(openImage){
+    if (openImage) {
+      this.setState({
+        showImage : this.props.openImage.image
+      }) 
+    }
   }
 
   render () {
-    const {idCard, onPress, isTurned, styleCard} = this.props;
+    const {idCard, onPress, openImage, styleCard} = this.props;
     return (
-      <TouchableHighlight key={idCard} onPress={() => {this.turnImage(); onPress(idCard) } } >
+      <TouchableHighlight key={idCard} onPress={() => { onPress(idCard); this._turnImage(openImage) } } >
           <Image source={this.state.showImage} style={styleCard} />
       </TouchableHighlight>
     )
