@@ -68,7 +68,7 @@ class DivinationScreen extends Component {
   }
  
   _pressCard = (x) => {
-      console.log(x);
+      
   }
 
    render () {
