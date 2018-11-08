@@ -18,7 +18,7 @@ class InterpritationScreen extends Component {
 
     render() {
         let { idCard, cardTurn, cardsItems } =  this.props.navigation.state.params;
-        // console.log(cardsItems[0]); return null;
+         //console.log(cardsItems[2]); return null;
         return (
             <View style={styles.StartCont}>
                 <ScrollableTabView
@@ -28,11 +28,11 @@ class InterpritationScreen extends Component {
                     tabBarTextStyle={{fontWeight: '300', color: '#000' }}
                     renderTabBar={() => <ScrollableTabBar style={{ borderBottomWidth: 0 }}/>}
                 >
-                    <CardDescription tabLabel='Суть проблемы' cardId={idCard[0]} cardTurn={cardTurn[0]} cardItem={cardsItems[0]} style={{ width: 130 }} />
-                    <CardDescription tabLabel='Что мешает'cardId={idCard[1]} cardTurn={cardTurn[1]} cardItem={cardsItems[1]} style={{ width: 130 }}/>
-                    <CardDescription tabLabel='Что поможет' cardId={idCard[2]} cardTurn={cardTurn[2]} cardItem={cardsItems[2]} style={{ width: 130 }}/>
-                    <CardDescription tabLabel='Совет' cardId={idCard[3]} cardTurn={cardTurn[3]} cardItem={cardsItems[3]} style={{ width: 130 }}/>
-                    <CardDescription tabLabel='Вероятный итог' cardId={idCard[4]} cardTurn={cardTurn[4]} cardItem={cardsItems[4]} style={{ width: 130 }}/>
+                    <CardDescription tabLabel='Суть проблемы' pos={0} cardId={idCard[0]} cardTurn={cardTurn[0]} cardItem={cardsItems[idCard[0]]} />
+                    <CardDescription tabLabel='Что мешает' pos={1} cardId={idCard[1]} cardTurn={cardTurn[1]} cardItem={cardsItems[idCard[1]]} />
+                    <CardDescription tabLabel='Что поможет' pos={2} cardId={idCard[2]} cardTurn={cardTurn[2]} cardItem={cardsItems[idCard[2]]} />
+                    <CardDescription tabLabel='Совет'       pos={3} cardId={idCard[3]} cardTurn={cardTurn[3]} cardItem={cardsItems[idCard[3]]} />
+                    <CardDescription tabLabel='Вероятный итог' pos={4} cardId={idCard[4]} cardTurn={cardTurn[4]} cardItem={cardsItems[idCard[4]]} />
                 </ScrollableTabView>
                 <Button title="Start!" onPress={this._toStart} />
             </View>
