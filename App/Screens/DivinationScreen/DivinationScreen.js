@@ -20,7 +20,7 @@ function _generateCards(){
   let i = 1;
   while( i < 5 ){
       let x = rand();
-      if(masCard.indexOf(x) == -1 && x >0 && x <22){
+      if(masCard.indexOf(x) == -1 && x >=0 && x <22){
           i++;
           masCard.push(x);
       }
@@ -73,22 +73,23 @@ class DivinationScreen extends Component {
 
    render () {
     const bgImage = require('../../Data/images/bs.jpg');
+//    console.log(this.state.cardsId);
     return (
       <View style={styles.StartCont}>
           <View style={styles.cardTop}>
-              <Card idCard={0} key={1} openImage={this.state.cardsItems[this.state.cardsId[0]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              <Card idCard={0} key={1} openImage={this.state.cardsItems[this.state.cardsId[0]]} bgImage={bgImage} onPress={this._pressCard} 
               styleCard={[styles.styleCard, this.state.cardsTurn[0] && styles.styleCardRotate]}/>
           </View>    
           <View style={styles.cardCenter}>
-              <Card idCard={1} key={2} openImage={this.state.cardsItems[this.state.cardsId[1]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              <Card idCard={1} key={2} openImage={this.state.cardsItems[this.state.cardsId[1]]} bgImage={bgImage} onPress={this._pressCard} 
               styleCard={[styles.styleCard, this.state.cardsTurn[1] && styles.styleCardRotate]}/>
-              <Card idCard={2} key={3} openImage={this.state.cardsItems[this.state.cardsId[2]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              <Card idCard={2} key={3} openImage={this.state.cardsItems[this.state.cardsId[2]]} bgImage={bgImage} onPress={this._pressCard} 
               styleCard={[styles.styleCard, this.state.cardsTurn[2] && styles.styleCardRotate]}/>
-              <Card idCard={3} key={4} openImage={this.state.cardsItems[this.state.cardsId[3]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              <Card idCard={3} key={4} openImage={this.state.cardsItems[this.state.cardsId[3]]} bgImage={bgImage} onPress={this._pressCard} 
               styleCard={[styles.styleCard, this.state.cardsTurn[3] && styles.styleCardRotate]}/>
           </View>    
           <View style={styles.cardTop}>
-              <Card idCard={4} key={5} openImage={this.state.cardsItems[this.state.cardsId[4]-1]} bgImage={bgImage} onPress={this._pressCard} 
+              <Card idCard={4} key={5} openImage={this.state.cardsItems[this.state.cardsId[4]]} bgImage={bgImage} onPress={this._pressCard} 
               styleCard={[styles.styleCard, this.state.cardsTurn[4] && styles.styleCardRotate]}/>
           </View>    
           <View style={styles.cardBottom}>

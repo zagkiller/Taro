@@ -1,14 +1,32 @@
 import { StyleSheet } from 'react-native'
-import { ApplicationStyles } from '../../Themes/'
-import Colors from "../../Themes/Colors";
+import { ApplicationStyles } from '../../../Themes/'
+import Colors from "../../../Themes/Colors";
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
-  StartCont: {
+  content: {
         justifyContent: 'center',
         flexDirection: 'column',
-        backgroundColor: Colors.kfc,
-        padding: 20,
-        width: '100%'
-    }
+        flex: 1,
+    },
+    styleCardRotate: {
+        transform: [{ rotate: '180deg'}],
+    }, 
+    imBox: {
+        flex: 1,
+        flexDirection: 'row',
+    }, 
+    textBox: {
+        flex: 1,
+        flexDirection: 'column',
+        padding: 8,
+    }, 
+    title: {
+        fontWeight: '700',
+        fontSize: 16,
+    }, 
+    text: {
+        fontSize: 14,
+        flexWrap: 'wrap',
+    }, 
 })
