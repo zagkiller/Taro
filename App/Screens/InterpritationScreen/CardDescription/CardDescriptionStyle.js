@@ -15,17 +15,24 @@ export default StyleSheet.create({
     imBox: {
         flex: 1,
         flexDirection: 'row',
+        paddingBottom: 12,
     }, 
     textBox: {
         flex: 1,
         flexDirection: 'column',
-        padding: 8,
+        padding: 4,
     }, 
     title: {
+        paddingBottom: 12,
         fontWeight: '700',
         fontSize: 16,
     }, 
+    textSmall: {
+        fontSize: 12,
+        flexWrap: 'wrap',
+    }, 
     text: {
+        paddingTop: 8,
         fontSize: 14,
         flexWrap: 'wrap',
     }, 

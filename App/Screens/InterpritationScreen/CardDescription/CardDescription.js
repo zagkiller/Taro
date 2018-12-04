@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Image, View, Text } from 'react-native'
+import { Image, ScrollView, View, Text } from 'react-native'
 
 import styles from './CardDescriptionStyle';
 
@@ -7,7 +7,7 @@ class CardDescription extends PureComponent {
 
 
   render () {
-    const { cardId, cardTurn, cardItem, pos } = this.props;
+    const { cardId, cardTurn, cardItem, pos, tabLabel } = this.props;
     //console.log(cardTurn);
 //    console.log(cardItem.description.down, cardItem.description.up);
 
@@ -15,16 +15,19 @@ class CardDescription extends PureComponent {
     imStyle = cardTurn ? {} : styles.styleCardRotate;
   //  console.log(position);
     return (
-      <View key={cardId} style={styles.content}>
-          <View style={styles.imBox}>
-            <Image source={cardItem.image} style={imStyle}/>
-            <View style={styles.textBox}>
-              <Text style={styles.title}>{cardItem.title}</Text>
-              <Text style={styles.text}>{cardItem.text}</Text>
+      <ScrollView>
+        <View key={cardId} style={styles.content}>
+            <View style={styles.imBox}>
+              <Image source={cardItem.image} style={imStyle}/>
+              <View style={styles.textBox}>
+                <Text style={styles.title}>{cardItem.title}</Text>
+                <Text style={styles.textSmall}>{cardItem.text}</Text>
+              </View>
             </View>
-          </View>
-          <Text style={styles.text}>{position[pos]}</Text>
-      </View>
+            <Text style={styles.title}>{tabLabel}</Text>
+            <Text style={styles.text}>{position[pos]}</Text>
+        </View>
+      </ScrollView>
     )
   }
 }

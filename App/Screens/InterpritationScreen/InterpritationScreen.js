@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { ScrollView, View, Text, Button } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 import styles from './InterpritationScreenStyle'
 import CardDescription from './CardDescription'
